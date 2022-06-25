@@ -34,5 +34,4 @@ def main():
   print(f"{text2} : {isBalanced(text2)}")
   print(f"{text3} : {isBalanced(text3)}")
 
-
 main()
