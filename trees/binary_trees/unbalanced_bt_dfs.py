@@ -50,6 +50,24 @@ def printDFSUsingStack(root: BinaryTreeNode):
     else:
       break
 
+def otherDFSUsingStack(root: BinaryTreeNode):
+  current = root
+  s = deque()
+  s.append(current)
+
+  while(s):
+    if s:
+      current = s.pop()
+      if current.right:
+        s.append(current.right)
+      if current.left:
+        s.append(current.left)
+
+      print(current.value, end=" ")
+
+    else:
+      break
+
 bt_root = CreateTree()
 
 print("Printing tree InOrder Traversal")
@@ -63,3 +81,6 @@ printPostOrder(bt_root)
 
 print("Printing InOrder using a stack")
 printDFSUsingStack(bt_root)
+
+print("Other InOrder using a stack")
+otherDFSUsingStack(bt_root)
